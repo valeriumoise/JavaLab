@@ -1,18 +1,17 @@
 package model;
 
-import graph.Node;
 import interfaces.Classifiable;
 import interfaces.Payable;
 import interfaces.Visitable;
 
-import java.util.ArrayList;
+public class Restaurant extends ScheduledLocation implements Classifiable, Payable, Visitable {
 
-public class Restaurant extends Node implements Classifiable, Payable, Visitable {
-
-    private String openingHour;
-    private String closingHour;
     private String classification;
     private int entryFee;
+
+    public Restaurant(String longitude, String latitude, String name) {
+        super(longitude, latitude, name);
+    }
 
     @Override
     public String getClassification() {
@@ -25,34 +24,22 @@ public class Restaurant extends Node implements Classifiable, Payable, Visitable
     }
 
     @Override
-    public void setHours(String openingHour, String closingHour) {
-        this.openingHour=openingHour;
-        this.closingHour=openingHour;
-    }
-
-    @Override
-    public ArrayList<String> getHours() {
-        ArrayList<String> temporaryOpeningHours = new ArrayList<String>();
-        temporaryOpeningHours.add(this.openingHour);
-        temporaryOpeningHours.add(this.closingHour);
-
-        return temporaryOpeningHours;
-    }
-
-    @Override
     public int getFee() {
         return entryFee;
     }
 
     @Override
     public void setFee(int entryFee) {
-        this.entryFee=entryFee;
+        this.entryFee = entryFee;
     }
 
-    Restaurant(){
-
-    }
-    public Restaurant(String longitude, String latitude, String name){
-        super(longitude,latitude,name);
+    @Override
+    public String toString() {
+        return "Restaurant{" +
+                "openingHour='" + getHours().get(0) + '\'' +
+                ", closingHour='" + getHours().get(1) + '\'' +
+                ", classification='" + classification + '\'' +
+                ", entryFee=" + entryFee +
+                '}';
     }
 }

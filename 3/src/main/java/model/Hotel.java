@@ -7,20 +7,28 @@ public class Hotel extends Node implements Classifiable {
 
     private String classification;
 
-    public Hotel(){
+    public Hotel() {
 
     }
 
-    public Hotel(String longitude,String latitude, String name){
-        super(longitude,latitude,name);
+    public Hotel(String longitude, String latitude, String name) {
+        super(longitude, latitude, name);
     }
+
+    @Override
+    public String getClassification() {
+        return classification;
+    }
+
     @Override
     public void setClassification(String classification) {
         this.classification = classification;
     }
 
     @Override
-    public String getClassification() {
-        return classification;
+    public String toString() {
+        return "Hotel{" +
+                "classification='" + classification + '\'' +
+                '}';
     }
 }

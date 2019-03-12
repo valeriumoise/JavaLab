@@ -2,9 +2,9 @@ package graph;
 
 public abstract class Node {
 
-    protected String latitude;
-    protected String longitude;
-    protected String name;
+    private String latitude;
+    private String longitude;
+    private String name;
 
     public Node(String longitude, String latitude, String name) {
         this.longitude = longitude;
@@ -12,10 +12,9 @@ public abstract class Node {
         this.name = name;
     }
 
-    public Node()
-    {
+    public Node() {
         this.latitude = "";
-        this.latitude = "";
+        this.longitude = "";
         this.name = "";
     }
 
