@@ -9,8 +9,8 @@ public class TravelMap {
      * Default constructor for TravelMap
      */
     public TravelMap(){
-        nodes= new ArrayList<Node>();
-        edges= new ArrayList<Edge>();
+        nodes= new ArrayList<>();
+        edges= new ArrayList<>();
     }
 
     /**
@@ -40,6 +40,10 @@ public class TravelMap {
         edges.add(temporaryEdge);
     }
 
+    public void addNode(Node node)
+    {
+        nodes.add(node);
+    }
     /**
      * Getter for nodes
      * @return a string containing all  of nodes
@@ -47,14 +51,13 @@ public class TravelMap {
     public String getNodes()
     {
 
-        StringBuilder stringBuilder = new StringBuilder();
-
+        String allNodes = "";
         for (Node node : nodes)
         {
-            stringBuilder.append( " " + node.getName() + ", ");
+            allNodes += " " + node.getName() + ", ";
         }
 
-        return stringBuilder.toString();
+        return allNodes;
 
     }
 
