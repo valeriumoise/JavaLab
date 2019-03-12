@@ -10,6 +10,13 @@ public class Main {
         Restaurant v6 = new Restaurant("2","3","Restaurant");
 
         TravelMap map = new TravelMap();
+        setupMap(v1, v2, v3, v4, v5, v6, map);
+
+        System.out.println("The Map is: " + map.getNodes());
+
+    }
+
+    private static void setupMap(Hotel v1, Museum v2, Museum v3, Church v4, Church v5, Restaurant v6, TravelMap map) {
         map.addNode(v1);
         map.addNode(v2);
         map.addNode(v3);
@@ -24,14 +31,5 @@ public class Main {
         map.addEdge(v4,v5,1);
         map.addEdge(v5,v6,1);
         map.addEdge(v2,v6,10);
-
-        System.out.println("The Map is: " + map.getNodes());
-
-
-
-
-
-
-
     }
 }
