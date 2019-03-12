@@ -67,4 +67,11 @@ public class TravelMap {
     }
 
 
+    @Override
+    public String toString() {
+        return "TravelMap{" +
+                "nodes=" + nodes +
+                ", edges=" + edges +
+                '}';
+    }
 }
