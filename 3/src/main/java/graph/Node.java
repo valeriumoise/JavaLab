@@ -1,3 +1,5 @@
+package graph;
+
 public abstract class Node {
 
     protected String latitude;

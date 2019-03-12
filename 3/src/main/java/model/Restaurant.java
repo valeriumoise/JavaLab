@@ -1,6 +1,13 @@
+package model;
+
+import graph.Node;
+import interfaces.Classifiable;
+import interfaces.Payable;
+import interfaces.Visitable;
+
 import java.util.ArrayList;
 
-public class Restaurant extends Node implements Classifiable,Payable,Visitable {
+public class Restaurant extends Node implements Classifiable, Payable, Visitable {
 
     private String openingHour;
     private String closingHour;
@@ -45,7 +52,7 @@ public class Restaurant extends Node implements Classifiable,Payable,Visitable {
     Restaurant(){
 
     }
-    Restaurant(String longitude, String latitude, String name){
+    public Restaurant(String longitude, String latitude, String name){
         super(longitude,latitude,name);
     }
 }

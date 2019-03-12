@@ -1,6 +1,12 @@
+package model;
+
+import graph.Node;
+import interfaces.Payable;
+import interfaces.Visitable;
+
 import java.util.ArrayList;
 
-public class Museum extends Node implements  Visitable,Payable {
+public class Museum extends Node implements Visitable, Payable {
 
     private String openingHour;
     private String closingHour;

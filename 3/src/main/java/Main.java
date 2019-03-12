@@ -1,16 +1,19 @@
+import model.*;
+
 public class Main {
 
     public static void main(String[] args) {
 
         Hotel v1 = new Hotel("2","1","California");
-        Museum v2= new Museum("1","2","Museum A");
-        Museum v3= new Museum("1","2","Museum B");
-        Church v4 = new Church("3","4","Church A");
-        Church v5 = new Church("1","3","Church B");
-        Restaurant v6 = new Restaurant("2","3","Restaurant");
-
+        Museum v2= new Museum("1","2","model.Museum A");
+        Museum v3= new Museum("1","2","model.Museum B");
+        Church v4 = new Church("3","4","model.Church A");
+        Church v5 = new Church("1","3","model.Church B");
+        Restaurant v6 = new Restaurant("2","3","model.Restaurant");
         TravelMap map = new TravelMap();
         setupMap(v1, v2, v3, v4, v5, v6, map);
+
+
 
         System.out.println("The Map is: " + map.getNodes());
 

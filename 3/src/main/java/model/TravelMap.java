@@ -1,17 +1,28 @@
+package model;
+
+import graph.Edge;
+import graph.Node;
+
 import java.util.ArrayList;
+import java.util.List;
 
 public class TravelMap {
 
-    private ArrayList<Node> nodes;
-    private ArrayList<Edge> edges;
+    private ArrayList<Node> nodes = new ArrayList<>();
+    private ArrayList<Edge> edges = new ArrayList<>();
+
+    public void setNodes(ArrayList<Node> nodes) {
+        this.nodes = nodes;
+    }
+
+    public void setEdges(ArrayList<Edge> edges) {
+        this.edges = edges;
+    }
 
     /**
-     * Default constructor for TravelMap
+     * Default constructor for model.TravelMap
      */
-    public TravelMap(){
-        nodes= new ArrayList<>();
-        edges= new ArrayList<>();
-    }
+    public TravelMap(){ }
 
     /**
      * method for adding an edge to the travel map
@@ -28,8 +39,8 @@ public class TravelMap {
 
     /**
      * method for adding either a oneWay or a twoWay edge
-     * @param node1 Starting Edge
-     * @param node2 Ending Edge
+     * @param node1 Starting graph.Edge
+     * @param node2 Ending graph.Edge
      * @param cost the cost of the edge
      * @param isTwoWay true if it is a twoWay edge false if it is a oneWay edge
      */
@@ -48,7 +59,7 @@ public class TravelMap {
      * Getter for nodes
      * @return a string containing all  of nodes
      */
-    public String getNodes()
+    public String getNodesToString()
     {
 
         String allNodes = "";
@@ -59,6 +70,10 @@ public class TravelMap {
 
         return allNodes;
 
+    }
+
+    public List<Node> getNodes(){
+        return this.nodes;
     }
 
     /**
@@ -72,7 +87,7 @@ public class TravelMap {
 
     @Override
     public String toString() {
-        return "TravelMap{" +
+        return "model.TravelMap{" +
                 "nodes=" + nodes +
                 ", edges=" + edges +
                 '}';

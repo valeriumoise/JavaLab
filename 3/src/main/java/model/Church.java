@@ -1,3 +1,8 @@
+package model;
+
+import graph.Node;
+import interfaces.Visitable;
+
 import java.util.ArrayList;
 public class Church extends Node implements Visitable {
 
@@ -30,7 +35,7 @@ public class Church extends Node implements Visitable {
     }
 
     /**
-     * Church constructor method
+     * model.Church constructor method
      * @param longitude the longitude at witch the church is located
      * @param latitude the latitude at witch the church is located
      * @param name the name of the church

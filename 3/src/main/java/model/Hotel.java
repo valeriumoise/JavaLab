@@ -1,3 +1,8 @@
+package model;
+
+import graph.Node;
+import interfaces.Classifiable;
+
 public class Hotel extends Node implements Classifiable {
 
     private String classification;
