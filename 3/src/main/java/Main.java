@@ -1,19 +1,36 @@
 import model.*;
+import service.TravelMapService;
+
+import java.time.DayOfWeek;
+import java.time.LocalTime;
+import java.time.MonthDay;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 public class Main {
 
     public static void main(String[] args) {
 
+        Set<OpeningTimes> openingTimes = new HashSet<>();
+        for (DayOfWeek day : DayOfWeek.values()) {
+            openingTimes.add(new OpeningTimes(day, LocalTime.of(8, 0), LocalTime.of(22, 0)));
+        }
+
         Hotel v1 = new Hotel("2", "1", "California");
-        Museum v2 = new Museum("1", "2", "Museum A");
-        Museum v3 = new Museum("1", "2", "Museum B");
-        Church v4 = new Church("3", "4", "Church A");
-        Church v5 = new Church("1", "3", "Church B");
-        Restaurant v6 = new Restaurant("2", "3", "Restaurant");
+        Museum v2 = new Museum("1", "2", "Museum A",openingTimes);
+        Museum v3 = new Museum("1", "2", "Museum B",openingTimes);
+        Church v4 = new Church("3", "4", "Church A",openingTimes);
+        Church v5 = new Church("1", "3", "Church B",openingTimes);
+        Restaurant v6 = new Restaurant("2", "3", "Restaurant",openingTimes);
         TravelMap map = new TravelMap();
         setupMap(v1, v2, v3, v4, v5, v6, map);
 
         System.out.println("The Map is: \n" + map.getNodesToString());
+
+        TravelMapService travelMapService = new TravelMapService(map);
+        travelMapService.printVisitableButNotPlayableLocations();
 
     }
 
@@ -32,5 +49,6 @@ public class Main {
         map.addEdge(v4, v5, 1);
         map.addEdge(v5, v6, 1);
         map.addEdge(v2, v6, 10);
+
     }
 }

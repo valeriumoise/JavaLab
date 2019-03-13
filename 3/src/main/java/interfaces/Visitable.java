@@ -1,10 +1,14 @@
 package interfaces;
 
-import java.util.ArrayList;
+import model.OpeningTimes;
+
+import java.util.Set;
 
 public interface Visitable {
 
-    void setHours(String openingHour, String closingHour);
+   void setOpeningTimes(Set<OpeningTimes> openingTimes);
 
-    ArrayList<String> getHours();
+   Set<OpeningTimes> getOpeningTimes();
+
+
 }

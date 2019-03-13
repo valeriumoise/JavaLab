@@ -4,12 +4,13 @@ import graph.Edge;
 import graph.Node;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class TravelMap {
 
-    private ArrayList<Node> nodes = new ArrayList<>();
-    private ArrayList<Edge> edges = new ArrayList<>();
+    private List<Node> nodes = new LinkedList<>();
+    private List<Edge> edges = new LinkedList<>();
 
     /**
      * Default constructor for model.TravelMap
@@ -77,7 +78,7 @@ public class TravelMap {
      *
      * @return a list for edges
      */
-    public ArrayList<Edge> getEdges() {
+    public List<Edge> getEdges() {
         return edges;
     }
 

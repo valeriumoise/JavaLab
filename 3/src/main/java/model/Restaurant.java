@@ -4,13 +4,25 @@ import interfaces.Classifiable;
 import interfaces.Payable;
 import interfaces.Visitable;
 
-public class Restaurant extends ScheduledLocation implements Classifiable, Payable, Visitable {
+import java.util.Set;
+
+public class Restaurant extends LocationWithBusinessHours implements Classifiable, Payable, Visitable {
 
     private String classification;
     private int entryFee;
 
     public Restaurant(String longitude, String latitude, String name) {
         super(longitude, latitude, name);
+    }
+
+    public Restaurant(String longitude, String latitude, String name, Set<OpeningTimes> openingTimes) {
+        super(longitude, latitude, name, openingTimes);
+    }
+
+    public Restaurant(String longitude, String latitude, String name, Set<OpeningTimes> openingTimes, String classification, int entryFee) {
+        super(longitude, latitude, name, openingTimes);
+        this.classification = classification;
+        this.entryFee = entryFee;
     }
 
     @Override
@@ -36,8 +48,7 @@ public class Restaurant extends ScheduledLocation implements Classifiable, Payab
     @Override
     public String toString() {
         return "Restaurant{" +
-                "openingHour='" + getHours().get(0) + '\'' +
-                ", closingHour='" + getHours().get(1) + '\'' +
+                getOpeningTimes().toString() +
                 ", classification='" + classification + '\'' +
                 ", entryFee=" + entryFee +
                 '}';

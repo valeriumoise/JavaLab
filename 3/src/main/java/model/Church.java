@@ -2,7 +2,9 @@ package model;
 
 import interfaces.Visitable;
 
-public class Church extends ScheduledLocation implements Visitable {
+import java.util.Set;
+
+public class Church extends LocationWithBusinessHours {
 
     /**
      * model.Church constructor method
@@ -17,11 +19,12 @@ public class Church extends ScheduledLocation implements Visitable {
 
     }
 
+    public Church(String longitude, String latitude, String name, Set<OpeningTimes> openingTimes) {
+        super(longitude, latitude, name, openingTimes);
+    }
+
     @Override
     public String toString() {
-        return "Church{" +
-                "openingHour='" + openingHour + '\'' +
-                ", closingHour='" + closingHour + '\'' +
-                '}';
+        return "Church{}" + getOpeningTimes().toString();
     }
 }

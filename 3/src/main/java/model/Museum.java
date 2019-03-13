@@ -3,12 +3,18 @@ package model;
 import interfaces.Payable;
 import interfaces.Visitable;
 
-public class Museum extends ScheduledLocation implements Visitable, Payable {
+import java.util.Set;
+
+public class Museum extends LocationWithBusinessHours implements Visitable, Payable {
 
     private int entryFee;
 
     public Museum(String longitude, String latitude, String name) {
         super(longitude, latitude, name);
+    }
+
+    public Museum(String longitude, String latitude, String name, Set<OpeningTimes> openingTimes) {
+        super(longitude, latitude, name, openingTimes);
     }
 
     @Override
@@ -24,8 +30,7 @@ public class Museum extends ScheduledLocation implements Visitable, Payable {
     @Override
     public String toString() {
         return "Museum{" +
-                "openingHour='" + openingHour + '\'' +
-                ", closingHour='" + closingHour + '\'' +
+                getOpeningTimes().toString() + '\'' +
                 ", entryFee=" + entryFee +
                 '}';
     }
