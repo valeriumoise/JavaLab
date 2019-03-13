@@ -31,6 +31,7 @@ public class Main {
 
         TravelMapService travelMapService = new TravelMapService(map);
         travelMapService.printVisitableButNotPlayableLocations();
+        travelMapService.printAveragePriceOfPayableLocations();
 
     }
 
