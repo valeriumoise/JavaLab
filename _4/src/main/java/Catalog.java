@@ -4,10 +4,26 @@ import java.util.List;
 
 public class Catalog implements Serializable {
 
-    List<Graph> graphList = new LinkedList<Graph>();
-    String path;
+    private List<Graph> graphList = new LinkedList<Graph>();
+    private String path;
 
     public Catalog(String path) {
+        this.path = path;
+    }
+
+    public List<Graph> getGraphList() {
+        return graphList;
+    }
+
+    public void setGraphList(List<Graph> graphList) {
+        this.graphList = graphList;
+    }
+
+    public String getPath() {
+        return path;
+    }
+
+    public void setPath(String path) {
         this.path = path;
     }
 
@@ -16,6 +32,14 @@ public class Catalog implements Serializable {
     }
 
     public void open(String graphName){
+
+    }
+
+    public void save(String fileName){
+
+    }
+
+    public void load(String fileName){
 
     }
 
