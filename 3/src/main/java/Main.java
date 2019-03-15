@@ -1,4 +1,5 @@
 import model.*;
+import service.FloydWarshallService;
 import service.TravelMapService;
 
 import java.time.DayOfWeek;
@@ -31,7 +32,13 @@ public class Main {
 
         TravelMapService travelMapService = new TravelMapService(map);
         travelMapService.printVisitableButNotPlayableLocations();
+        travelMapService.printAveragePriceOfPayableLocations();
 
+
+        System.out.println("Distances:");
+        FloydWarshallService floydWarshallService = new FloydWarshallService();
+        floydWarshallService.floydWarshall(map.getNodes(),map.getEdges());
+        floydWarshallService.printDistances();
     }
 
     private static void setupMap(Hotel v1, Museum v2, Museum v3, Church v4, Church v5, Restaurant v6, TravelMap map) {
