@@ -1,6 +1,7 @@
 public class Graph {
 
     private String name;
+    private String description;
     private String imagePath;
     private String tgfPath;
 
@@ -12,6 +13,14 @@ public class Graph {
         this.name = name;
         this.imagePath = imagePath;
         this.tgfPath = tgfPath;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getName() {
