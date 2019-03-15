@@ -1,6 +1,9 @@
-import java.io.Serializable;
+import java.awt.*;
+import java.io.*;
 import java.util.LinkedList;
 import java.util.List;
+import java.awt.Desktop;
+import java.util.Objects;
 
 public class Catalog implements Serializable {
 
@@ -28,19 +31,18 @@ public class Catalog implements Serializable {
     }
 
     public void add (Graph graph){
-
+        graphList.add(graph);
     }
 
     public void open(String graphName){
-
-    }
-
-    public void save(String fileName){
-
-    }
-
-    public void load(String fileName){
-
+        Desktop desktop = Desktop.getDesktop();
+        desktop.enableSuddenTermination();
+        try {
+            desktop.open(new File(graphName));
+        } catch (IOException e) {
+            System.out.println("No file found having this name. Please retry.");
+            e.printStackTrace();
+        }
     }
 
 }
