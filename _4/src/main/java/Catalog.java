@@ -36,13 +36,16 @@ public class Catalog implements Serializable {
 
     public void open(String graphName){
         Desktop desktop = Desktop.getDesktop();
-        desktop.enableSuddenTermination();
         try {
             desktop.open(new File(graphName));
         } catch (IOException e) {
             System.out.println("No file found having this name. Please retry.");
             e.printStackTrace();
         }
+    }
+
+    public void list(){
+        graphList.forEach(graph -> System.out.println(graph.toString()));
     }
 
 }

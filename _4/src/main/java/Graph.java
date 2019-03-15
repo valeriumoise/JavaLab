@@ -87,4 +87,15 @@ public class Graph {
     public void setTgfPath(String tgfPath) {
         this.tgfPath = tgfPath;
     }
+
+
+    @Override
+    public String toString() {
+        return "Graph{" +
+                "name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", imagePath='" + imagePath + '\'' +
+                ", tgfPath='" + tgfPath + '\'' +
+                '}';
+    }
 }
