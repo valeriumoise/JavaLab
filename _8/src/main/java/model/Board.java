@@ -29,4 +29,10 @@ public class Board {
         return edge;
     }
 
+    public boolean isEmpty(){
+
+        return complete.isEmpty();
+
+    }
+
 }
