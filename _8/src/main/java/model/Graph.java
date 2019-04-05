@@ -1,6 +1,7 @@
 package model;
 
 import java.util.List;
+import java.util.Random;
 
 public class Graph {
     List<Edge> edges;
@@ -19,5 +20,10 @@ public class Graph {
 
     public void addEdge(Edge edge){
         edges.add(edge);
+    }
+
+    public void extractEdge() {
+        Random rand = new Random();
+        edges.remove(rand.nextInt(edges.size()-1)+1);
     }
 }
