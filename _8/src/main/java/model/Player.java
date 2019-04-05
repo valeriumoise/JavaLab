@@ -51,8 +51,8 @@ public class Player implements Runnable{
     }
 
     public void run() {
-        System.out.println(this.toString() + " is playing...");
         this.graph.extractEdge();
+        System.out.println(this.toString() + " extracted an edge...");
     }
 
 
