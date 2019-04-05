@@ -17,7 +17,7 @@ public class Graph {
     public Edge pullFirst() {
 
         Edge edge = edges.get(0);
-
+        edges.remove(0);
         return edge;
     }
 
