@@ -23,4 +23,8 @@ public class Graph {
     public void setEdges(List<Edge> edges) {
         this.edges = edges;
     }
+
+    public void addEdge(Edge edge){
+        edges.add(edge);
+    }
 }
