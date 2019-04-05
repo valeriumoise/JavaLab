@@ -51,18 +51,15 @@ public class Player implements Runnable{
     }
 
     public void run() {
-
+        this.graph.extractEdge();
+        System.out.println(this.toString() + " extracted an edge...");
     }
-    // implement the run() method, that will repeatedly extract edges
-    // implement the toString() method
 
 
     @Override
     public String toString() {
         return "Player{" +
                 "name='" + name + '\'' +
-                ", game=" + game +
-                ", graph=" + graph +
                 '}';
     }
 
