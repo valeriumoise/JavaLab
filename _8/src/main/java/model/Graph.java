@@ -14,6 +14,13 @@ public class Graph {
         return edges;
     }
 
+    public Edge pullFirst(){
+
+        Edge edge = edges.get(0);
+
+        return edge;
+    }
+
     public void setEdges(List<Edge> edges) {
         this.edges = edges;
     }
