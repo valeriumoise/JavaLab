@@ -27,16 +27,19 @@ public class Game {
     }
 
 
-    //Create the method that will start the game: start one thread for each player
-    public void startGame() {
-        // TODO: code this
-    }
 
     public void setWinner(Player player) {
         this.winner = player;
     }
 
     public void start() {
+        players.forEach(player -> {
+            Thread newThread = new Thread(player);
+            newThread.start();
+        });
+    }
 
+    public Player getWinner() {
+        return winner;
     }
 }

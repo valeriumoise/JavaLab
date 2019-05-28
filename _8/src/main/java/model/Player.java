@@ -1,12 +1,16 @@
 package model;
 
+import java.util.LinkedList;
+import java.util.List;
+
 public class Player implements Runnable{
     private String name;
     private Game game;
     private Graph graph;
 
-    public Player(String name) {
+    public Player(String name, Game game) {
         this.name = name;
+        this.graph = new Graph(new LinkedList<Edge>());
     }
 
     public Player(String name, Game game, Graph graph) {
@@ -45,14 +49,19 @@ public class Player implements Runnable{
         graph.addEdge( board.extract() );
         Thread.sleep(THINKING_TIME); //declare this constant
         if (graph.isSpanningTree()) {
-            game.setWinner(this);
+            if (game.getWinner() != null)
+                game.setWinner(this);
+            else return true;
         }
         return true;
     }
 
     public void run() {
-        this.graph.extractEdge();
-        System.out.println(this.toString() + " extracted an edge...");
+        try {
+            play();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
 
